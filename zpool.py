@@ -81,7 +81,7 @@ def get(pool=None, properties=None):
     Outputs:
         stats (dict): Iostat output
 """
-def iostat(pool, interval, ct, *args):
+def iostat(pool, interval, ct):
     pass
 
 """
