@@ -24,14 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import subprocess
 
 """
-    execute
+    Execute a command in the default shell.
     
-    Description:
-        Execute a command in the default shell.
-
     Inputs:
         cmd (str): Command to execute.
-
     Outputs:
         retcode (int): Exit status.
         stdout  (str): STDOUT
