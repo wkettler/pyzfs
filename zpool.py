@@ -55,7 +55,7 @@ def status(pool=None):
     Outputs:
         history (list): Pool history
 """
-def history(pool, *args):
+def history(pool=None):
     pass
 
 """
@@ -63,15 +63,16 @@ def history(pool, *args):
         all pools if no pool is specified.
     
     Inputs:
-        pool (str): Storage pool
+        pool       (str): Storage pool
+        properties (str): Comma separated list of properties, default all
     Outputs:
         props (dict): Pool properties
 """
-def get(pool, *args):
+def get(pool=None, properties=None):
     pass
 
 """
-    <description>
+    Displays I/O statistics for the given pools.
     
     Inputs:
         pool     (str): Storage pool
