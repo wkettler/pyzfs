@@ -21,7 +21,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from execute import execute
+from lib.execute import execute
 
 """
     Lists the property information for the given datasets.
