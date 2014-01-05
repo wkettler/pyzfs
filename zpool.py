@@ -28,22 +28,22 @@ from execute import execute
         space usage.   
     
     Inputs:
-        None
+        pool (str): Storage pool
     Outputs:
         list (dict): Pool list
 """
-def list():
+def list(pool=None):
     pass
 
 """
     Displays the detailed health status for all pools.
     
     Inputs:
-        None
+        pool (str): Storage pool
     Outputs:
         status (dict): Pool status
 """
-def status():
+def status(pool=None):
     pass
 
 """
