@@ -1,4 +1,4 @@
 pyzfs
 =====
 
-Python wrappers
+Python wrappers for zfs binaries.
