@@ -21,77 +21,95 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from lib.execute import execute
+from execute import execute
 
-"""
-    Lists all pools along with a health status and
-        space usage.   
-    
+ZPOOL = "/sbin/zpool"
+
+def zpool(cmd, *args):
+    """
+    foo
+
+    Inputs:
+    Outputs:
+    """
+    retcode, output = execute(" ".join([ZPOOL, cmd, " ".join[args]]))
+
+    return retcode, output
+
+
+def list(pool=None):
+    """
+    Lists all pools along with a health status and space usage.
+
     Inputs:
         pool (str): Storage pool
     Outputs:
         list (dict): Pool list
-"""
-def list(pool=None):
+    """
+    params = ["-H"]
     pass
 
-"""
+
+def status(pool=None):
+    """
     Displays the detailed health status for all pools.
-    
+
     Inputs:
         pool (str): Storage pool
     Outputs:
         status (dict): Pool status
-"""
-def status(pool=None):
+    """
     pass
 
-"""
-    Displays the command history of the specified  pool  or
-        all pools if no pool is specified.
-    
+
+def history(pool=None):
+    """
+    Displays the command history of the specified  pool  or all pools if no
+    pool is specified.
+
     Inputs:
         pool (str): Storage pool
     Outputs:
         history (list): Pool history
-"""
-def history(pool=None):
+    """
     pass
 
-"""
-    Retrieves the given list of properties for the specified pool or
-        all pools if no pool is specified.
-    
+
+def get(pool=None, props=None):
+    """
+    Retrieves the given list of properties for the specified pool or all pools
+    if no pool is specified.
+
     Inputs:
-        pool       (str): Storage pool
-        properties (str): Comma separated list of properties, default all
+        pool   (str): Storage pool
+        props (list): Properties, default all
     Outputs:
         props (dict): Pool properties
-"""
-def get(pool=None, properties=None):
+    """
     pass
 
-"""
+
+def iostat(pool, ival, ct):
+    """
     Displays I/O statistics for the given pools.
-    
+
     Inputs:
-        pool     (str): Storage pool
-        interval (int): Interval in seconds
-        ct       (int): Number of reports
+        pool (str): Storage pool
+        ival (int): Interval in seconds
+        ct   (int): Number of reports
     Outputs:
         stats (dict): Iostat output
-"""
-def iostat(pool, interval, ct):
+    """
     pass
 
-"""
-    Displays the detailed health status for all pools
-        exhibiting errors.
-    
+
+def errors():
+    """
+    Displays the detailed health status for all pools exhibiting errors.
+
     Inputs:
         None
     Outputs:
         errors (dict): Pool status
-"""
-def errors():
+    """
     pass

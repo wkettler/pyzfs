@@ -3,7 +3,7 @@
 """
 zfs.py
 
-Python wrapper for libzfs 'zfs' binary.
+Python wrapper for the libzfs 'zfs' binary.
 
 Copyright (C) 2013  William Kettler <william.p.kettler@gmail.com>
 
@@ -21,43 +21,64 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from lib.execute import execute
+from execute import execute
 
-"""
-    Lists the property information for the given datasets.
-    
+ZFS = "/sbin/zfs"
+
+def zfs(cmd, *args):
+    """
+    Execute a zfs command.
+
     Inputs:
-        fs         (str): filesystem|volume|snapshot
-        types      (str): A comma-separated list of types to display
-        recursive (bool): Recursively display children
+        cmd (str): sub-command, i.e. create, get
+    Outputs:
+        retcode  (int): Return code
+        output  (list): STDOUT/STDERR
+    """
+    retcode, output = execute(" ".join([ZFS, cmd, " ".join[args]]))
+
+    return retcode, output
+
+
+def list(fs=None, types=None, recurs=False):
+    """
+    Lists the property information for the given datasets.
+
+    Inputs:
+        fs      (str): filesystem|volume|snapshot
+        types  (list): Types to display, where type is one of filesystem,
+                       snapshot, volume
+        recurs (bool): Recursively display children
     Outputs:
         <var> (<type>): <description>
-"""
-def list(fs=None, types=None, recursive=False):
+    """
     pass
 
-"""
+
+def get(fs=None, props=None, types=None, recurs=False):
+    """
     Displays  properties  for  the  given  datasets.
-    
+
     Inputs:
-        properties (str): Comma separated list of properties, default all
-        fs         (str): filesystem|volume|snapshot
-        types      (str): A comma-separated list of types to display
-        recursive (bool): Recursively display children
+        props  (list): Properties, default all
+        fs      (str): filesystem|volume|snapshot
+        types  (list): Types to display, where type is one of filesystem,
+                       snapshot, volume
+        recurs (bool): Recursively display children
     Outputs:
         props (dict): Properties
-"""
-def get(properties=None, fs=None, types=None, recursive=False):
+    """
     pass
 
-"""
+
+def snapshots(fs=None, recurs=False):
+    """
     List snapshots.
-    
+
     Inputs:
-        fs         (str): Dataset
-        recursive (bool): Recursively list snapshots
+        fs      (str): Dataset
+        recurs (bool): Recursively list snapshots
     Outputs:
-        snapshots (dict): Dataset snapshots
-"""
-def snapshots(fs=None, recursive=False):
+        snaps (dict): Dataset snapshots
+    """
     pass
